@@ -1,0 +1,11 @@
+# Reference config. The Railway template deploys the prebuilt image
+# ghcr.io/onepush-dev/silo-server:build-2069-r1 (built by the GHCR workflow).
+[build]
+builder = "DOCKERFILE"
+dockerfilePath = "Dockerfile"
+
+[deploy]
+healthcheckPath = "/api/v1/health"
+healthcheckTimeout = 1200
+restartPolicyType = "ON_FAILURE"
+restartPolicyMaxRetries = 10
